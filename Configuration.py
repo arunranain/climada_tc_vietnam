@@ -1,0 +1,72 @@
+import os
+
+
+image_folder = '/Users/qinhan/Documents/AXA/ECA_Vietnam/Presentation/Paper/PNG/WF/'  # results and data will be saved in this folder
+project_folder = '/Users/qinhan/Documents/AXA/ECA_Vietnam/Model_output/'  # results and data will be saved in this folder
+input_folder = '/Users/qinhan/Documents/AXA/ECA_Vietnam/Codes/'  # this folder should be the folder containing this script and .csv files
+file_identifier = '_v01'  # this string is added to all files written by this code
+region_id = 704
+country = 'VNM'
+
+fl_centroids = os.path.join(project_folder, 'centr_' + country + file_identifier + '.hdf5')
+fl_haz_tc_cc0 = os.path.join(project_folder, 'HAZ_tc_mix50_' + country + file_identifier + '.hdf5')
+
+percentile = 97.5
+number_rdw = 50
+coast_range = 10000
+house_assets = 111.3 * 1000000000 * 1.025**5
+population = 97.33 * 1000000
+
+# storm_threshold = 33 # category 1
+storm_threshold = 50 #cateogory 3
+
+surge_threshold = 1
+
+
+class Object(object):
+    pass
+
+
+hist_storms = Object()
+hist_storms.lon_min = 102
+hist_storms.lat_min = 8.5
+hist_storms.lon_max = 110
+hist_storms.lat_max = 23.5
+hist_storms.start_year = 1980
+hist_storms.end_year = 2019
+
+horizon = 2050
+
+sea_level_rise = {0:0, 45:0.2, 85:0.3}
+
+disc_rate = 0.06
+
+ur_houses_asset_growth = 2
+
+ru_houses_asset_growth = 2
+
+agri_asset_growth = 2
+
+insu_cost_TC_houses = 0.1
+
+population_growth = 1.13
+
+
+
+
+
+import numpy as np
+import matplotlib.colors as colors
+import matplotlib.pyplot as plt
+
+upper = plt.cm.Blues(np.arange(256))
+lower = np.ones((1,4))
+# combine parts of colormap
+cmap = np.vstack(( lower, upper ))
+# convert to matplotlib colormap
+cmap = colors.ListedColormap(cmap, name='myColorMap', N=cmap.shape[0])
+
+upper = plt.cm.Reds(np.arange(256))
+cmap_red = np.vstack(( lower, upper ))
+# convert to matplotlib colormap
+cmap_red = colors.ListedColormap(cmap_red, name='myColorMap', N=cmap_red.shape[0])
