@@ -15,7 +15,7 @@ fl_centroids = os.path.join(project_folder, 'centr_' + country + file_identifier
 
 fl_HAZ_tc_cc0 = os.path.join(project_folder, 'HAZ_tc_mix50_' + country + file_identifier + '.hdf5')
 
-
+percentile = 97.5
 number_rdw = 50 # number of probabilistic tracks generated per historical event
 coast_range = 10000 # region where the distance to coastal line is smaller than 10km is defined as coastal area
 house_assets = 111.3 * 1000000000 * 1.025**5
