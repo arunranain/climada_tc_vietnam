@@ -202,7 +202,7 @@ def intro_haz_tc(fl_haz_tc, cc, number_random_walk = number_rdw):
 
     elif cc == 45:
 
-        haz_tc_cc0 = intro_haz_tc(fl_haz_tc_cc0, 0)
+        haz_tc_cc0 = intro_haz_tc(fl_HAZ_tc_cc0, 0)
 
         haz_tc = haz_tc_cc0.set_climate_scenario_knu(ref_year=horizon,rcp_scenario=45)
 
@@ -210,7 +210,7 @@ def intro_haz_tc(fl_haz_tc, cc, number_random_walk = number_rdw):
 
     elif cc == 85:
 
-        haz_tc_cc0 = intro_haz_tc(fl_haz_tc_cc0, 0)
+        haz_tc_cc0 = intro_haz_tc(fl_HAZ_tc_cc0, 0)
 
         haz_tc = haz_tc_cc0.set_climate_scenario_knu(ref_year=horizon, rcp_scenario=85)
 
